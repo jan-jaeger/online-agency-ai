@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --void-950: #030712;
+  --void-900: #050505;
+  --signal-500: #00ff66;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: var(--void-900);
+  color: #e6f5ec;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom cursor: hide native cursor only on fine-pointer (desktop) devices */
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+::selection {
+  background: rgba(0, 255, 102, 0.28);
+  color: #eafff2;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #10241a;
+  border-radius: 999px;
+  border: 2px solid #050505;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0d3a24;
+}
+
+.text-glow {
+  text-shadow: 0 0 18px rgba(0, 255, 102, 0.45);
+}
+
+.border-glow {
+  box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.25), 0 0 24px rgba(0, 255, 102, 0.12);
+}
+
+.font-feature-mono {
+  font-feature-settings: "ss01" on, "zero" on;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

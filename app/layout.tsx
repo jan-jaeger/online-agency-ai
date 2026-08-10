@@ -27,9 +27,6 @@ const SITE_TITLE = "online-Agency.ai | KI-Speed trifft schlüsselfertige Umsetzu
 const SITE_DESCRIPTION =
   "Erhalte in 30 Sekunden deine kostenlose KI-Analyse für SEO, GEO, SEA, Webdesign und E-Commerce. Schlüsselfertige Umsetzung durch deinen persönlichen Ansprechpartner.";
 
-const GTM_ID = "GTM-5VVKK5LF";
-const COOKIEBOT_DOMAIN_GROUP_ID = "1d596dfa-c8dc-4838-aa56-0b86532619b3";
-
 export const metadata: Metadata = {
   title: {
     default: SITE_TITLE,
@@ -101,33 +98,19 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${jetbrainsMono.variable} ${inter.variable}`}>
       <body className="font-sans antialiased bg-void-900 text-white selection:bg-signal-500/30">
-        {/* Google Tag Manager (noscript) — muss als allererstes Element im <body> stehen */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-
-        {/* Cookiebot — muss vor allen anderen Skripten geladen werden */}
+        {/* 1. Usercentrics Auto-Blocker (muss ganz oben geladen werden) */}
         <Script
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid={COOKIEBOT_DOMAIN_GROUP_ID}
-          data-blockingmode="auto"
+          src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"
           strategy="beforeInteractive"
         />
 
-        {/* Google Tag Manager (Head-Skript) */}
-        <Script id="gtm-script" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`}
-        </Script>
+        {/* 2. Usercentrics CMP Loader */}
+        <Script
+          id="usercentrics-cmp"
+          src="https://web.cmp.usercentrics.eu/ui/loader.js"
+          data-ruleset-id="hmlKkQse8XjAOg"
+          strategy="afterInteractive"
+        />
 
         <JsonLd />
         <MouseGlow />

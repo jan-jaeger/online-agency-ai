@@ -98,7 +98,7 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${jetbrainsMono.variable} ${inter.variable}`}>
       <body className="font-sans antialiased bg-void-900 text-white selection:bg-signal-500/30">
-        {/* 1. Usercentrics Auto-Blocker (muss ganz oben geladen werden) */}
+        {/* 1. Usercentrics Auto-Blocker */}
         <Script
           src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"
           strategy="beforeInteractive"
@@ -109,7 +109,7 @@ export default function RootLayout({
           id="usercentrics-cmp"
           src="https://web.cmp.usercentrics.eu/ui/loader.js"
           data-ruleset-id="hmlKkQse8XjAOg"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
 
         <JsonLd />

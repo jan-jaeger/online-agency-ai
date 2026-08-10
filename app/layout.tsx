@@ -97,14 +97,11 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${jetbrainsMono.variable} ${inter.variable}`}>
       <head>
-        {/* Usercentrics Auto-Blocker */}
-        <script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js" />
-        
-        {/* Usercentrics CMP Loader */}
+        {/* Usercentrics Live Skript (Manual Blocking) */}
         <script
           id="usercentrics-cmp"
           src="https://web.cmp.usercentrics.eu/ui/loader.js"
-          data-ruleset-id="hmlKkQse8XjAOg"
+          data-settings-id="hmlKkQse8XjAOg"
           async
         />
       </head>

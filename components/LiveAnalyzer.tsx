@@ -81,7 +81,7 @@ export default function LiveAnalyzer() {
           onChange={(e) => setUrl(e.target.value)}
           placeholder="deine-website.de"
           data-cursor-hover
-          className="w-full flex-1 rounded-lg border border-white/15 bg-void-900 px-4 py-3 font-mono text-[13.5px] text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500"
+          className="w-full flex-1 rounded-lg border border-white/15 bg-void-900 px-4 py-3 font-mono text-base text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500 sm:text-[13.5px]"
         />
         <button
           type="submit"

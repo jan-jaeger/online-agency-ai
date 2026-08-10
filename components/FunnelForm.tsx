@@ -307,7 +307,7 @@ export default function FunnelForm() {
                   }
                   placeholder="Max Mustermann"
                   data-cursor-hover
-                  className="w-full rounded-lg border border-white/15 bg-void-900 px-4 py-3 text-[14px] text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500"
+                  className="w-full rounded-lg border border-white/15 bg-void-900 px-4 py-3 text-base text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500 sm:text-[14px]"
                 />
               </label>
 
@@ -323,7 +323,7 @@ export default function FunnelForm() {
                   }
                   placeholder="max@firma.de"
                   data-cursor-hover
-                  className="w-full rounded-lg border border-white/15 bg-void-900 px-4 py-3 text-[14px] text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500"
+                  className="w-full rounded-lg border border-white/15 bg-void-900 px-4 py-3 text-base text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500 sm:text-[14px]"
                 />
               </label>
 
@@ -339,7 +339,7 @@ export default function FunnelForm() {
                   }
                   placeholder="+49 151 23456789"
                   data-cursor-hover
-                  className="w-full rounded-lg border border-white/15 bg-void-900 px-4 py-3 text-[14px] text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500"
+                  className="w-full rounded-lg border border-white/15 bg-void-900 px-4 py-3 text-base text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500 sm:text-[14px]"
                 />
               </label>
 
@@ -355,7 +355,7 @@ export default function FunnelForm() {
                   }
                   placeholder="firma.de"
                   data-cursor-hover
-                  className="w-full rounded-lg border border-white/15 bg-void-900 px-4 py-3 text-[14px] text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500"
+                  className="w-full rounded-lg border border-white/15 bg-void-900 px-4 py-3 text-base text-white placeholder:text-white/25 outline-none transition-colors focus:border-signal-500 sm:text-[14px]"
                 />
               </label>
             </div>

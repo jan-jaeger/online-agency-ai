@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import MouseGlow from "@/components/MouseGlow";
@@ -97,21 +96,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className={`${jetbrainsMono.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased bg-void-900 text-white selection:bg-signal-500/30">
-        {/* 1. Usercentrics Auto-Blocker */}
-        <Script
-          src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"
-          strategy="beforeInteractive"
-        />
-
-        {/* 2. Usercentrics CMP Loader */}
-        <Script
+      <head>
+        {/* Usercentrics Auto-Blocker */}
+        <script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js" />
+        
+        {/* Usercentrics CMP Loader */}
+        <script
           id="usercentrics-cmp"
           src="https://web.cmp.usercentrics.eu/ui/loader.js"
           data-ruleset-id="hmlKkQse8XjAOg"
-          strategy="beforeInteractive"
+          async
         />
-
+      </head>
+      <body className="font-sans antialiased bg-void-900 text-white selection:bg-signal-500/30">
         <JsonLd />
         <MouseGlow />
         <CustomCursor />

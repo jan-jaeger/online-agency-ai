@@ -97,12 +97,32 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${jetbrainsMono.variable} ${inter.variable}`}>
       <head>
-        {/* Usercentrics Live Skript (Manual Blocking) */}
+        {/* 1. Usercentrics Live CMP Loader */}
         <script
           id="usercentrics-cmp"
           src="https://web.cmp.usercentrics.eu/ui/loader.js"
           data-settings-id="hmlKkQse8XjAOg"
           async
+        />
+
+        {/* 2. Google Analytics 4 (Durch type="text/plain" & data-usercentrics von Usercentrics geschützt) */}
+        <script
+          type="text/plain"
+          data-usercentrics="Google Analytics"
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-Q7NLFK76LC"
+        />
+        <script
+          type="text/plain"
+          data-usercentrics="Google Analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-Q7NLFK76LC');
+            `,
+          }}
         />
       </head>
       <body className="font-sans antialiased bg-void-900 text-white selection:bg-signal-500/30">

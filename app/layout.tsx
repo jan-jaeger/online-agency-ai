@@ -24,7 +24,7 @@ const inter = Inter({
 const SITE_URL = "https://www.online-agency.ai";
 const SITE_TITLE = "online-Agency.ai | KI-Speed trifft schlüsselfertige Umsetzung";
 const SITE_DESCRIPTION =
-  "In 30 Sek. deine kostenlose KI-Analyse für SEO, GEO, SEA & Webdesign. Schlüsselfertige Umsetzung durch deinen persönlichen Ansprechpartner.";
+  "Erhalte in 30 Sekunden deine kostenlose KI-Analyse für SEO, GEO, SEA, Webdesign und E-Commerce. Schlüsselfertige Umsetzung durch deinen persönlichen Ansprechpartner.";
 
 export const metadata: Metadata = {
   title: {
@@ -84,8 +84,18 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/og-image.png"],
   },
-  // Favicon/App-Icons werden automatisch erkannt: app/favicon.ico,
-  // app/icon.png und app/apple-icon.png — kein manueller Eintrag nötig.
+  // app/favicon.ico, app/icon.png und app/apple-icon.png werden von Next.js
+  // automatisch als <link>-Tags erkannt. Zusätzlich hier noch explizite
+  // Standard-Icon-Größen (32/48/96px) deklariert — Google bevorzugt für die
+  // Suchergebnis-Anzeige ein klar deklariertes, kleineres PNG-Icon statt nur
+  // das große 512px-Icon bzw. das .ico herunterzuskalieren.
+  icons: {
+    icon: [
+      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

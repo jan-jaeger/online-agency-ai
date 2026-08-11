@@ -82,7 +82,7 @@ export default function Hero(props: HeroProps) {
             {badgeText}
           </div>
 
-          <h1 className="mt-6 font-mono text-4xl font-bold leading-[1.08] tracking-tight text-white [hyphens:auto] [overflow-wrap:break-word] sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-6 font-mono text-4xl font-bold leading-[1.08] tracking-tight text-white [hyphens:auto] [overflow-wrap:break-word] sm:[hyphens:manual] sm:[overflow-wrap:normal] sm:text-5xl lg:text-[3.4rem]">
             {heading}
           </h1>
 

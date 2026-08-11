@@ -84,18 +84,11 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/og-image.png"],
   },
-  // app/favicon.ico, app/icon.png und app/apple-icon.png werden von Next.js
-  // automatisch als <link>-Tags erkannt. Zusätzlich hier noch explizite
-  // Standard-Icon-Größen (32/48/96px) deklariert — Google bevorzugt für die
-  // Suchergebnis-Anzeige ein klar deklariertes, kleineres PNG-Icon statt nur
-  // das große 512px-Icon bzw. das .ico herunterzuskalieren.
-  icons: {
-    icon: [
-      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-48x48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icon-96x96.png", sizes: "96x96", type: "image/png" },
-    ],
-  },
+  // Favicon/App-Icons werden ausschließlich über Datei-Konventionen erzeugt:
+  // app/favicon.ico, app/icon.tsx (mehrere Größen via generateImageMetadata)
+  // und app/apple-icon.png. Ein manueller `icons`-Eintrag hier würde von
+  // Next.js ignoriert, sobald Icon-Dateien im app/-Verzeichnis existieren
+  // (datei-basierte Metadata hat laut Next.js-Doku immer Vorrang).
 };
 
 export default function RootLayout({

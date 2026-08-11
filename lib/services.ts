@@ -24,7 +24,7 @@ export const SERVICES: ServiceDef[] = [
     shortName: "Suchmaschinenoptimierung",
     badgeText: "Kostenlose SEO & GEO-Analyse in 30 Sek.",
     description: (city) =>
-      `Sichtbarkeit bei Google und in KI-Suchsystemen wie ChatGPT für Unternehmen in ${city} und Umgebung — von der technischen Analyse bis zur laufenden Betreuung.`,
+      `Sichtbarkeit bei Google und in KI-Suchsystemen wie ChatGPT für Unternehmen in ${city} — von der technischen Analyse bis zur laufenden Betreuung.`,
     keywords: (city) => [
       `SEO ${city}`,
       `Suchmaschinenoptimierung ${city}`,
@@ -40,7 +40,7 @@ export const SERVICES: ServiceDef[] = [
     shortName: "Webdesign",
     badgeText: "Kostenlose Website-Analyse in 30 Sek.",
     description: (city) =>
-      `Moderne, blitzschnelle Websites für Unternehmen in ${city} — von der ersten Analyse bis zur schlüsselfertigen Umsetzung durch deinen persönlichen Ansprechpartner.`,
+      `Moderne, blitzschnelle Websites für Unternehmen in ${city} — von der Analyse bis zur schlüsselfertigen Umsetzung durch deinen Ansprechpartner.`,
     keywords: (city) => [
       `Webdesign ${city}`,
       `Webdesigner ${city}`,

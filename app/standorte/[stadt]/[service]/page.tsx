@@ -37,9 +37,7 @@ export function generateMetadata({
   }
 
   const title = `${service.shortName} in ${location.name}`;
-  const description = location.localContext
-    ? `${service.description(location.name)} ${location.localContext}`
-    : service.description(location.name);
+  const description = service.description(location.name);
   const canonicalPath = `/standorte/${location.slug}/${service.slug}`;
 
   return {

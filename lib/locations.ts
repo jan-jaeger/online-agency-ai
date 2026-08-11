@@ -28,7 +28,7 @@ export const LOCATIONS: Location[] = [
     region: "Zollernalbkreis, Baden-Württemberg",
     proximityNote: "nur wenige Kilometer von unserem Sitz in Haigerloch entfernt",
     localContext:
-      "Balingen ist ein starker Mittelstandsstandort für Maschinenbau, Feinmechanik und Wägetechnik — geprägt von Unternehmen wie Bizerba und mehreren deutschen Weltmarktführern in Nischenbranchen wie Kreissägeblättern und Präzisionswerkzeugen.",
+      "Balingen ist ein starker Mittelstandsstandort für Maschinenbau und Feinmechanik — geprägt von Unternehmen wie Bizerba.",
   },
   {
     slug: "hechingen",

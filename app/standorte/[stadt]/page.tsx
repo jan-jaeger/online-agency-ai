@@ -21,7 +21,9 @@ export function generateMetadata({
   if (!location) return {};
 
   const title = `Standort ${location.name}`;
-  const description = `online-Agency.ai in ${location.name} — KI-Analyse in 30 Sekunden, schlüsselfertige Umsetzung durch deinen persönlichen Ansprechpartner. SEO, Webdesign, SEA und E-Commerce für ${location.name} und Umgebung.`;
+  const description =
+    location.localContext ??
+    `online-Agency.ai in ${location.name} — KI-Analyse in 30 Sekunden, schlüsselfertige Umsetzung durch deinen persönlichen Ansprechpartner.`;
   const canonicalPath = `/standorte/${location.slug}`;
 
   return {

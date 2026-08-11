@@ -26,7 +26,7 @@ export default function Hero() {
             KI-Analyse in 30 Sek. + Echter Experte in 48 Std.
           </div>
 
-          <h1 className="mt-6 font-mono text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="mt-6 font-mono text-4xl font-bold leading-[1.08] tracking-tight text-white [hyphens:auto] [overflow-wrap:break-word] sm:text-5xl lg:text-[3.4rem]">
             KI bringt die{" "}
             <span className="text-signal-500 text-glow">Geschwindigkeit</span>.
             <br />

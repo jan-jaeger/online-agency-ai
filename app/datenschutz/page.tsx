@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
@@ -9,14 +8,6 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const TOC = [
-  { id: "auf-einen-blick", label: "1. Datenschutz auf einen Blick" },
-  { id: "hosting", label: "2. Hosting" },
-  { id: "allgemeine-hinweise", label: "3. Allgemeine Hinweise und Pflichtinformationen" },
-  { id: "datenerfassung", label: "4. Datenerfassung auf dieser Website" },
-  { id: "analyse-tools", label: "5. Analyse-Tools und Werbung" },
-];
-
 export default function DatenschutzPage() {
   return (
     <main>
@@ -25,28 +16,6 @@ export default function DatenschutzPage() {
         <div className="border-b border-white/10 pb-6">
           <h1 className="font-mono text-3xl font-bold tracking-tight text-white sm:text-4xl">Datenschutzerklärung</h1>
         </div>
-
-        {/* Inhaltsverzeichnis */}
-        <nav
-          aria-label="Inhaltsverzeichnis"
-          className="mt-8 rounded-lg border border-white/10 bg-void-950/40 p-5"
-        >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-white/40">
-            Inhaltsverzeichnis
-          </p>
-          <ul className="space-y-1.5 text-sm">
-            {TOC.map((item) => (
-              <li key={item.id}>
-                <Link
-                  href={`#${item.id}`}
-                  className="text-signal-400 transition-colors hover:text-signal-300 hover:underline"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
 
 <section id="auf-einen-blick" className="mt-16 scroll-mt-28">
 <h2 className="font-mono text-2xl font-semibold text-signal-400">1. Datenschutz auf einen Blick</h2>
@@ -88,7 +57,7 @@ export default function DatenschutzPage() {
 <h3 className="font-mono mb-2 mt-8 text-lg font-semibold text-white">Hinweis zur verantwortlichen Stelle</h3>
 <p className="leading-relaxed text-white/60">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
 <p className="mt-4 leading-relaxed text-white/60">online-agency.ai<br /> Jan Jäger<br /> Stieglesfeld 13<br /> 72401 Haigerloch</p>
-<p className="mt-4 leading-relaxed text-white/60">Telefon: +49 7474 95 46 880<br /> E-Mail: <a href="mailto:kontakt@online-agency.ai" data-cursor-hover className="text-signal-400 transition-colors hover:text-signal-300 hover:underline">kontakt@online-agency.ai</a></p>
+<p className="mt-4 leading-relaxed text-white/60">Telefon: +49 7474 95 46 880<br /> E-Mail: <a href="mailto:kontakt@online-agency.ai" className="text-signal-400 hover:text-signal-300 hover:underline">kontakt@online-agency.ai</a></p>
 <p className="mt-4 leading-relaxed text-white/60">Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
 <h3 className="font-mono mb-2 mt-8 text-lg font-semibold text-white">Speicherdauer</h3>
 <p className="leading-relaxed text-white/60">Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.</p>
@@ -118,7 +87,7 @@ export default function DatenschutzPage() {
 <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-white/60 marker:text-signal-500"><li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li><li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig geschah/geschieht, können Sie statt der Löschung die Einschränkung der Datenverarbeitung verlangen.</li><li>Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li><li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li></ul>
 <p className="mt-4 leading-relaxed text-white/60">Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
 <h3 className="font-mono mb-2 mt-8 text-lg font-semibold text-white">SSL- bzw. TLS-Verschlüsselung</h3>
-<p className="leading-relaxed text-white/60">Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von <span className="font-mono text-white">http://</span> auf <span className="font-mono text-white">https://</span> wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
+<p className="leading-relaxed text-white/60">Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
 <p className="mt-4 leading-relaxed text-white/60">Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.</p>
 </section>
 <section id="datenerfassung" className="mt-16 scroll-mt-28 border-t border-white/10 pt-12">
@@ -130,6 +99,15 @@ export default function DatenschutzPage() {
 <p className="mt-4 leading-relaxed text-white/60">Cookies, die zur Durchführung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erwünschter Funktionen (z. B. für die Warenkorbfunktion) oder zur Optimierung der Website (z. B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG); die Einwilligung ist jederzeit widerrufbar.</p>
 <p className="mt-4 leading-relaxed text-white/60">Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.</p>
 <p className="mt-4 leading-relaxed text-white/60">Sofern weitere Cookies und Dienste auf dieser Website eingesetzt werden, können Sie dies dieser Datenschutzerklärung entnehmen.</p>
+<h3 className="font-mono mb-2 mt-8 text-lg font-semibold text-white">Einwilligung mit Usercentrics</h3>
+<p className="leading-relaxed text-white/60">Diese Website nutzt die Consent-Technologie von Usercentrics, um Ihre Einwilligung zur Speicherung bestimmter Cookies auf Ihrem Endgerät oder zum Einsatz bestimmter Technologien einzuholen und diese datenschutzkonform zu dokumentieren. Anbieter dieser Technologie ist die Usercentrics GmbH, Sendlinger Straße 7, 80331 München, Website: <a href="https://usercentrics.com/de/" target="_blank" rel="noopener noreferrer" className="text-signal-400 hover:text-signal-300 hover:underline">https://usercentrics.com/de/</a> (im Folgenden „Usercentrics“).</p>
+<p className="mt-4 leading-relaxed text-white/60">Wenn Sie unsere Website betreten, werden folgende personenbezogene Daten an Usercentrics übertragen:</p>
+<ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-white/60 marker:text-signal-500"><li>Ihre Einwilligung(en) bzw. der Widerruf Ihrer Einwilligung(en)</li><li>Ihre IP-Adresse</li><li>Informationen über Ihren Browser</li><li>Informationen über Ihr Endgerät</li><li>Zeitpunkt Ihres Besuchs auf der Website</li><li>Geolocation</li></ul>
+<p className="mt-4 leading-relaxed text-white/60">Des Weiteren speichert Usercentrics ein Cookie in Ihrem Browser, um Ihnen die erteilten Einwilligungen bzw. deren Widerruf zuordnen zu können. Die so erfassten Daten werden gespeichert, bis Sie uns zur Löschung auffordern, das Usercentrics-Cookie selbst löschen oder der Zweck für die Datenspeicherung entfällt. Zwingende gesetzliche Aufbewahrungspflichten bleiben unberührt.</p>
+<p className="mt-4 leading-relaxed text-white/60">Das Usercentrics-Banner auf dieser Website wurde mit Hilfe von eRecht24 konfiguriert. Das erkennen Sie daran, dass im Banner das Logo von eRecht24 auftaucht. Um das eRecht24-Logo im Banner auszuspielen, wird eine Verbindung zum Bildserver von eRecht24 hergestellt. Hierbei wird auch die IP-Adresse übertragen, die jedoch nur in anonymisierter Form in den Server-Logs gespeichert wird. Der Bildserver von eRecht24 befindet sich in Deutschland bei einem deutschen Anbieter. Das Banner selbst wird ausschließlich von Usercentrics zur Verfügung gestellt.</p>
+<p className="mt-4 leading-relaxed text-white/60">Der Einsatz von Usercentrics erfolgt, um die gesetzlich vorgeschriebenen Einwilligungen für den Einsatz bestimmter Technologien einzuholen. Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. c DSGVO.</p>
+<h4 className="font-mono mb-1.5 mt-5 text-base font-semibold text-white/85">Auftragsverarbeitung</h4>
+<p className="leading-relaxed text-white/60">Wir haben einen Vertrag über Auftragsverarbeitung (AVV) zur Nutzung des oben genannten Dienstes geschlossen. Hierbei handelt es sich um einen datenschutzrechtlich vorgeschriebenen Vertrag, der gewährleistet, dass dieser die personenbezogenen Daten unserer Websitebesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet.</p>
 <h3 className="font-mono mb-2 mt-8 text-lg font-semibold text-white">Server-Log-Dateien</h3>
 <p className="leading-relaxed text-white/60">Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:</p>
 <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-white/60 marker:text-signal-500"><li>Browsertyp und Browserversion</li><li>verwendetes Betriebssystem</li><li>Referrer URL</li><li>Hostname des zugreifenden Rechners</li><li>Uhrzeit der Serveranfrage</li><li>IP-Adresse</li></ul>
@@ -194,7 +172,6 @@ export default function DatenschutzPage() {
 <h4 className="font-mono mb-1.5 mt-5 text-base font-semibold text-white/85">Auftragsverarbeitung</h4>
 <p className="leading-relaxed text-white/60">Wir haben mit Google einen Vertrag zur Auftragsverarbeitung abgeschlossen und setzen die strengen Vorgaben der deutschen Datenschutzbehörden bei der Nutzung von Google Analytics vollständig um.</p>
 </section>
-
       </div>
     </main>
   );

@@ -84,8 +84,11 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: ["/og-image.png"],
   },
-  // Favicon/App-Icons werden automatisch erkannt: app/favicon.ico,
-  // app/icon.png und app/apple-icon.png — kein manueller Eintrag nötig.
+  // Favicon/App-Icons werden ausschließlich über Datei-Konventionen erzeugt:
+  // app/favicon.ico, app/icon.tsx (mehrere Größen via generateImageMetadata)
+  // und app/apple-icon.png. Ein manueller `icons`-Eintrag hier würde von
+  // Next.js ignoriert, sobald Icon-Dateien im app/-Verzeichnis existieren
+  // (datei-basierte Metadata hat laut Next.js-Doku immer Vorrang).
 };
 
 export default function RootLayout({

@@ -36,7 +36,7 @@ export const LOCATIONS: Location[] = [
     region: "Zollernalbkreis, Baden-Württemberg",
     proximityNote: "in direkter Nachbarschaft zu unserem Sitz in Haigerloch",
     localContext:
-      "Hechingen ist als „Medical Valley Hechingen“ bekannt — ein Kompetenznetzwerk mit über 60 Medizintechnik-Unternehmen, Zulieferern und Dienstleistern, eng verzahnt mit den Universitäten Tübingen und Stuttgart.",
+      "Hechingen ist als „Medical Valley Hechingen“ bekannt — ein Kompetenznetzwerk mit über 60 Medizintechnik-Unternehmen und Zulieferern.",
   },
 ];
 

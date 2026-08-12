@@ -21,7 +21,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const SITE_URL = "https://online-agency.ai";
+const SITE_URL = "https://www.online-agency.ai";
 const SITE_TITLE = "online-Agency.ai | KI-Speed trifft schlüsselfertige Umsetzung";
 const SITE_DESCRIPTION =
   "Erhalte in 30 Sekunden deine kostenlose KI-Analyse für SEO, GEO, SEA, Webdesign und E-Commerce. Schlüsselfertige Umsetzung durch deinen persönlichen Ansprechpartner.";

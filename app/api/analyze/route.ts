@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
       redirect: "follow",
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (compatible; online-Agency-ai-Analyzer/1.0; +https://online-agency.ai)",
+          "Mozilla/5.0 (compatible; online-Agency-ai-Analyzer/1.0; +https://www.online-agency.ai)",
       },
     });
 

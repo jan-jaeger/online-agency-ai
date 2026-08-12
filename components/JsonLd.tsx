@@ -1,6 +1,6 @@
 import { FAQS } from "@/lib/faq";
 
-const SITE_URL = "https://online-agency.ai";
+const SITE_URL = "https://www.online-agency.ai";
 
 /**
  * Hinweis zu "MarketingAgency": Das ist kein offizieller schema.org-Typ

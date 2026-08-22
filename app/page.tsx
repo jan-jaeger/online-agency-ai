@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import LocationsMap from "@/components/LocationsMap";
 import LiveAnalyzerSection from "@/components/LiveAnalyzerSection";
 import ComparisonMatrix from "@/components/ComparisonMatrix";
 import FunnelSection from "@/components/FunnelSection";
@@ -12,6 +13,7 @@ export default function Home() {
       <LiveAnalyzerSection />
       <ComparisonMatrix />
       <FunnelSection />
+      <LocationsMap />
       <ChatDemoSection />
       <FAQ />
     </main>

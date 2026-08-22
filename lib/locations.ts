@@ -56,6 +56,20 @@ export const LOCATIONS: Location[] = [
     localContext:
       "Sylts Wirtschaft ist fast vollständig vom Tourismus geprägt – exklusives Reiseziel mit hohem Anspruch an digitale Präsenz von Hotellerie und Gastronomie.",
   },
+  {
+    slug: "dubai",
+    name: "Dubai",
+    region: "Vereinigte Arabische Emirate",
+    localContext:
+      "Dubais Wirtschaft hat sich vom Öl gelöst – nur noch 5% des BIP, Fokus auf Handel, Tourismus, Technologie. Business-Hub zwischen Europa und Asien.",
+  },
+  {
+    slug: "abu-dhabi",
+    name: "Abu Dhabi",
+    region: "Vereinigte Arabische Emirate",
+    localContext:
+      "Abu Dhabis Nicht-Öl-Sektor erreichte 2025 mit 56,2% BIP-Anteil einen Rekordwert – starkes Wachstum bei Fintech und Cleantech, mit staatlicher Förderung.",
+  },
 ];
 
 export function getLocationBySlug(slug: string): Location | undefined {

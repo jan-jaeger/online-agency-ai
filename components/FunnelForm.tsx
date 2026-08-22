@@ -210,12 +210,14 @@ export default function FunnelForm() {
           </span>
           <span className="text-signal-500">{Math.round(progress)}%</span>
         </div>
-        <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-          <div
-            className="h-full rounded-full bg-signal-500 shadow-glow-sm transition-all duration-500 ease-out"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+        <progress
+          value={progress}
+          max={100}
+          aria-label={`Fortschritt: Schritt ${step} von ${TOTAL_STEPS}`}
+          className="h-1.5 w-full appearance-none overflow-hidden rounded-full border-0 bg-white/10 [&::-moz-progress-bar]:rounded-full [&::-moz-progress-bar]:bg-signal-500 [&::-webkit-progress-bar]:rounded-full [&::-webkit-progress-bar]:bg-white/10 [&::-webkit-progress-value]:rounded-full [&::-webkit-progress-value]:bg-signal-500 [&::-webkit-progress-value]:shadow-glow-sm [&::-webkit-progress-value]:transition-[width] [&::-webkit-progress-value]:duration-500 [&::-webkit-progress-value]:ease-out"
+        >
+          {Math.round(progress)}%
+        </progress>
       </div>
 
       <div className="rounded-2xl border border-white/10 bg-void-950/60 p-6 sm:p-9">

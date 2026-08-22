@@ -1,30 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LOCATIONS } from "@/lib/locations";
+import { applySeoOverride } from "@/lib/seoOverrides";
 
-const TITLE = "Standorte";
-const DESCRIPTION =
-  "online-Agency.ai vor Ort — SEO, Webdesign, SEA und E-Commerce für Unternehmen in deiner Region. Alle Standorte im Überblick.";
-
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
+const seo = applySeoOverride("/standorte", {
+  title: "Standorte",
+  description:
+    "online-Agency.ai vor Ort — SEO, Webdesign, SEA und E-Commerce für Unternehmen in deiner Region. Alle Standorte im Überblick.",
   keywords: [
     "Online Marketing Agentur",
     "Webagentur Zollernalbkreis",
     ...LOCATIONS.map((l) => `Agentur ${l.name}`),
   ],
+});
+
+export const metadata: Metadata = {
+  title: seo.title,
+  description: seo.description,
+  keywords: seo.keywords,
   alternates: { canonical: "/standorte" },
   openGraph: {
-    title: `${TITLE} | online-Agency.ai`,
-    description: DESCRIPTION,
+    title: `${seo.title} | online-Agency.ai`,
+    description: seo.description,
     url: "/standorte",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${TITLE} | online-Agency.ai`,
-    description: DESCRIPTION,
+    title: `${seo.title} | online-Agency.ai`,
+    description: seo.description,
   },
 };
 
@@ -42,10 +46,10 @@ export default function StandorteOverviewPage() {
         </div>
 
         <p className="mt-8 max-w-2xl leading-relaxed text-white/60">
-          online-Agency.ai unterstützt Unternehmen in ganz Deutschland — mit
-          besonderer Nähe zu Kunden in der Region rund um unseren Sitz in
-          Haigerloch. Wähle deinen Standort für lokal zugeschnittene
-          Informationen zu SEO, Webdesign, SEA und E-Commerce.
+          online-Agency.ai arbeitet komplett standortunabhängig — unser Team
+          betreut Unternehmen in ganz Deutschland und international. Wähle
+          deinen Standort für zugeschnittene Informationen zu SEO,
+          Webdesign, SEA und E-Commerce.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">

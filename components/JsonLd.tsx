@@ -17,10 +17,10 @@ const professionalServiceSchema = {
   url: SITE_URL,
   description:
     "KI-Speed trifft schlüsselfertige Umsetzung: kostenlose KI-Analyse in 30 Sekunden für SEO, GEO, SEA, Webdesign und E-Commerce — Umsetzung durch einen persönlichen Ansprechpartner.",
-  areaServed: {
-    "@type": "Country",
-    name: "Deutschland",
-  },
+  // areaServed bewusst weggelassen: online-Agency.ai arbeitet
+  // standortunabhängig und betreut Kunden international, nicht nur
+  // in Deutschland — eine feste Länder-Einschränkung wäre hier nicht
+  // mehr zutreffend.
   employee: {
     "@type": "Person",
     name: "Jan J.",

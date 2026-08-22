@@ -3,10 +3,8 @@ export interface Location {
   slug: string;
   /** Anzeigename, z. B. "Balingen" */
   name: string;
-  /** Region/Landkreis für Fließtext & strukturierte Daten */
+  /** Region/Land für Fließtext & strukturierte Daten */
   region: string;
-  /** Kurzer, ehrlicher Kontext-Satz zur Nähe zum Firmensitz (optional, für Lokalkolorit) */
-  proximityNote?: string;
   /** Echter, recherchierter Branchenschwerpunkt vor Ort — macht den Content pro Stadt einzigartig statt templated */
   localContext?: string;
 }
@@ -19,14 +17,14 @@ export interface Location {
  *
  * localContext bitte mit echten, recherchierten Fakten füllen (nicht
  * erfinden!) — das ist der wichtigste Hebel gegen Thin-/Duplicate-Content
- * bei mehreren Stadt-Seiten mit sonst identischer Struktur.
+ * bei mehreren Stadt-Seiten mit sonst identischer Struktur. Unter 155
+ * Zeichen halten, sonst schneidet Google in den Suchergebnissen ab.
  */
 export const LOCATIONS: Location[] = [
   {
     slug: "balingen",
     name: "Balingen",
     region: "Zollernalbkreis, Baden-Württemberg",
-    proximityNote: "nur wenige Kilometer von unserem Sitz in Haigerloch entfernt",
     localContext:
       "Balingen ist ein starker Mittelstandsstandort für Maschinenbau und Feinmechanik — geprägt von Unternehmen wie Bizerba.",
   },
@@ -34,9 +32,29 @@ export const LOCATIONS: Location[] = [
     slug: "hechingen",
     name: "Hechingen",
     region: "Zollernalbkreis, Baden-Württemberg",
-    proximityNote: "in direkter Nachbarschaft zu unserem Sitz in Haigerloch",
     localContext:
       "Hechingen ist als „Medical Valley Hechingen“ bekannt — ein Kompetenznetzwerk mit über 60 Medizintechnik-Unternehmen und Zulieferern.",
+  },
+  {
+    slug: "mallorca",
+    name: "Mallorca",
+    region: "Balearen, Spanien",
+    localContext:
+      "Mallorcas Wirtschaft lebt vom Tourismus – über 13 Mio. Gäste jährlich, viele deutschsprachig. Genau diese Branchen profitieren von starker Sichtbarkeit.",
+  },
+  {
+    slug: "suedtirol",
+    name: "Südtirol",
+    region: "Autonome Provinz Bozen, Italien",
+    localContext:
+      "Südtirol verzeichnete 2025 ein Rekordjahr mit über 38 Mio. Übernachtungen – Fokus auf Qualität statt Masse. Dafür braucht es hochwertige digitale Präsenz.",
+  },
+  {
+    slug: "sylt",
+    name: "Sylt",
+    region: "Nordfriesland, Schleswig-Holstein",
+    localContext:
+      "Sylts Wirtschaft ist fast vollständig vom Tourismus geprägt – exklusives Reiseziel mit hohem Anspruch an digitale Präsenz von Hotellerie und Gastronomie.",
   },
 ];
 

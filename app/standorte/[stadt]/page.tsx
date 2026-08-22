@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LOCATIONS, getLocationBySlug } from "@/lib/locations";
 import { SERVICES } from "@/lib/services";
+import { applySeoOverride } from "@/lib/seoOverrides";
 
 interface PageParams {
   stadt: string;
@@ -20,15 +21,13 @@ export function generateMetadata({
   const location = getLocationBySlug(params.stadt);
   if (!location) return {};
 
-  const title = `Standort ${location.name}`;
-  const description =
-    location.localContext ??
-    `online-Agency.ai in ${location.name} — KI-Analyse in 30 Sekunden, schlüsselfertige Umsetzung durch deinen persönlichen Ansprechpartner.`;
   const canonicalPath = `/standorte/${location.slug}`;
 
-  return {
-    title,
-    description,
+  const seo = applySeoOverride(canonicalPath, {
+    title: `Standort ${location.name}`,
+    description:
+      location.localContext ??
+      `online-Agency.ai in ${location.name} — KI-Analyse in 30 Sekunden, schlüsselfertige Umsetzung durch deinen persönlichen Ansprechpartner.`,
     keywords: [
       `Agentur ${location.name}`,
       `Online Marketing ${location.name}`,
@@ -36,17 +35,23 @@ export function generateMetadata({
       `Webdesign ${location.name}`,
       `Werbeagentur ${location.name}`,
     ],
+  });
+
+  return {
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
     alternates: { canonical: canonicalPath },
     openGraph: {
-      title: `${title} | online-Agency.ai`,
-      description,
+      title: `${seo.title} | online-Agency.ai`,
+      description: seo.description,
       url: canonicalPath,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | online-Agency.ai`,
-      description,
+      title: `${seo.title} | online-Agency.ai`,
+      description: seo.description,
     },
   };
 }
@@ -76,10 +81,10 @@ export default function StandortPage({ params }: { params: PageParams }) {
         </div>
 
         <p className="mt-8 max-w-2xl leading-relaxed text-white/60">
-          online-Agency.ai unterstützt Unternehmen in {location.name} und
-          Umgebung mit KI-gestützter Sofort-Analyse und schlüsselfertiger
-          Umsetzung durch einen persönlichen Ansprechpartner.
-          {location.proximityNote && ` Wir sind ${location.proximityNote}.`}
+          online-Agency.ai unterstützt Unternehmen in {location.name} mit
+          KI-gestützter Sofort-Analyse und schlüsselfertiger Umsetzung. Unser
+          Team arbeitet komplett standortunabhängig — für Kunden in{" "}
+          {location.name} und weltweit.
         </p>
 
         {location.localContext && (

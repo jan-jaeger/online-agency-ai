@@ -79,6 +79,21 @@ export const SERVICES: ServiceDef[] = [
       `E-Commerce Beratung ${city}`,
     ],
   },
+  {
+    slug: "meta-ads",
+    name: "Meta Ads & Social Media Marketing",
+    shortName: "Meta Ads",
+    badgeText: "Kostenlose Meta-Ads-Analyse in 30 Sek.",
+    description: (city) =>
+      `Facebook- und Instagram-Kampagnen, die für Unternehmen in ${city} wirklich Reichweite und Umsatz bringen — von der Zielgruppenanalyse bis zur Betreuung.`,
+    keywords: (city) => [
+      `Meta Ads ${city}`,
+      `Facebook Werbung ${city}`,
+      `Instagram Werbung ${city}`,
+      `Social Media Marketing ${city}`,
+      `Facebook Ads Agentur ${city}`,
+    ],
+  },
 ];
 
 export function getServiceBySlug(slug: string): ServiceDef | undefined {

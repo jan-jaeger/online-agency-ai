@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import LocalServiceJsonLd from "@/components/LocalServiceJsonLd";
 import { LOCATIONS, getLocationBySlug } from "@/lib/locations";
 import { SERVICES, getServiceBySlug } from "@/lib/services";
+import { applySeoOverride } from "@/lib/seoOverrides";
 
 interface PageParams {
   stadt: string;
@@ -36,25 +37,29 @@ export function generateMetadata({
     return {};
   }
 
-  const title = `${service.shortName} in ${location.name}`;
-  const description = service.description(location.name);
   const canonicalPath = `/standorte/${location.slug}/${service.slug}`;
 
-  return {
-    title,
-    description,
+  const seo = applySeoOverride(canonicalPath, {
+    title: `${service.shortName} in ${location.name}`,
+    description: service.description(location.name),
     keywords: service.keywords(location.name),
+  });
+
+  return {
+    title: seo.title,
+    description: seo.description,
+    keywords: seo.keywords,
     alternates: { canonical: canonicalPath },
     openGraph: {
-      title: `${title} | online-Agency.ai`,
-      description,
+      title: `${seo.title} | online-Agency.ai`,
+      description: seo.description,
       url: canonicalPath,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | online-Agency.ai`,
-      description,
+      title: `${seo.title} | online-Agency.ai`,
+      description: seo.description,
     },
   };
 }
@@ -92,11 +97,10 @@ export default function StandortServicePage({
         subtext={
           <>
             {service.description(location.name)}{" "}
-            {location.proximityNote && (
-              <span className="text-white/85">
-                Wir sind {location.proximityNote}.
-              </span>
-            )}
+            <span className="text-white/85">
+              Unser Team arbeitet komplett standortunabhängig — für
+              Unternehmen in {location.name} und weltweit.
+            </span>
             {location.localContext && (
               <span className="mt-3 block text-white/50">
                 {location.localContext}

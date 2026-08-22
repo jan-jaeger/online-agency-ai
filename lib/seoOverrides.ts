@@ -62,7 +62,24 @@ export function applySeoOverride(path: string, defaults: SeoDefaults): SeoDefaul
   };
 }
 
+
+
+
+
 export const SEO_OVERRIDES: Record<string, SeoOverride> = {
+  "/standorte/hechingen/seo": {
+    title: "SEO Agentur Hechingen",
+    description: "SEO-Agentur Hechingen (online-Agency.ai) – wir bringen Betriebe aus Hechingen und dem Zollernalbkreis sichtbar bei Google.",
+  },
+
+  "/standorte/balingen/seo": {
+    title: "SEO Agentur Balingen",
+    description: "SEO-Agentur Balingen (online-Agency.ai) – wir bringen Betriebe aus Balingen und dem Zollernalbkreis sichtbar bei Google.",
+  },
+};
+
+
+
   // Beispiel (auskommentiert — zum Aktivieren die Kommentarzeichen
   // // entfernen und mit echten Werten befüllen):
   //
@@ -71,4 +88,3 @@ export const SEO_OVERRIDES: Record<string, SeoOverride> = {
   //   description: "Dein handgeschriebener Text für die Google-Vorschau, unter 155 Zeichen.",
   //   keywords: ["SEO Hechingen", "Suchmaschinenoptimierung Hechingen"],
   // },
-};

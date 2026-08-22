@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import GridBackground from "./GridBackground";
 import AnalysisTerminal from "./AnalysisTerminal";
 import ServiceMarquee from "./ServiceMarquee";
+import ScrambleText from "./ScrambleText";
 
 const DEFAULT_TRUST_BADGES = ["100% Kostenlos", "DSGVO-konform", "Rückmeldung in 48h"];
 
@@ -79,7 +80,11 @@ export default function Hero(props: HeroProps) {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal-500 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-signal-500" />
             </span>
-            {badgeText}
+            {typeof badgeText === "string" ? (
+              <ScrambleText phrases={[badgeText]} />
+            ) : (
+              badgeText
+            )}
           </div>
 
           <h1 className="mt-6 font-mono text-4xl font-bold leading-[1.08] tracking-tight text-white [hyphens:auto] [overflow-wrap:break-word] sm:[hyphens:manual] sm:[overflow-wrap:normal] sm:text-5xl lg:text-[3.4rem]">

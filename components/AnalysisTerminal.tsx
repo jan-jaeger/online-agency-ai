@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ExpertBadge from "./ExpertBadge";
+import ScrambleText from "./ScrambleText";
 
 const LOG_LINES = [
   { label: "Analysiere Struktur", value: "shop.io/checkout", ok: true },
@@ -34,8 +35,15 @@ export default function AnalysisTerminal() {
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-signal-500/60" />
-        <span className="ml-2 font-mono text-[11px] text-white/40">
-          ki-analyst — live
+        <span className="ml-2 font-mono text-[11px] uppercase tracking-wide text-white/40">
+          <ScrambleText
+            phrases={[
+              "KI-ANALYST — LIVE",
+              "SYSTEM BEREIT",
+              "WARTE AUF PROJEKT",
+              "SCAN-MODUS AKTIV",
+            ]}
+          />
         </span>
       </div>
 
